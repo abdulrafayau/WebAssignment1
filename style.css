@@ -1,0 +1,53 @@
+/* Google Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.4s, color 0.4s;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .card,
+.dark-mode .navbar,
+.dark-mode .footer {
+    background-color: #1e1e1e !important;
+    color: white !important;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    color: white;
+    text-align: center;
+}
+
+/* Scroll To Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #4e73df;
+    color: white;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+#scrollTopBtn:hover {
+    background-color: #2e59d9;
+}
+
+.footer {
+    padding: 20px 0;
+    text-align: center;
+    background: #f8f9fc;
+}n
