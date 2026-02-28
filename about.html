@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYBERLEARN // ABOUT</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root{--cyan:#00ffe7;--magenta:#ff00aa;--yellow:#ffe600;--dark:#050a0e;--green:#00ff41;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:linear-gradient(rgba(0,255,231,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,231,0.03) 1px,transparent 1px),var(--dark);background-size:40px 40px;color:var(--cyan);font-family:'Share Tech Mono',monospace;cursor:crosshair;}
+  body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 2px,rgba(0,0,0,0.12) 2px,rgba(0,0,0,0.12) 4px);pointer-events:none;z-index:9999;}
+
+  .navbar-cyber{background:rgba(5,10,14,0.95);border-bottom:1px solid var(--cyan);padding:1rem 0;position:sticky;top:0;z-index:1000;box-shadow:0 0 30px rgba(0,255,231,0.2);}
+  .navbar-brand-cyber{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.4rem;color:var(--cyan) !important;text-decoration:none;letter-spacing:3px;text-shadow:0 0 10px var(--cyan);}
+  .navbar-brand-cyber span{color:var(--magenta);}
+  .nav-link-cyber{font-family:'Share Tech Mono',monospace;color:rgba(0,255,231,0.7) !important;letter-spacing:2px;font-size:0.85rem;padding:0.5rem 1rem !important;text-decoration:none;transition:all 0.2s;}
+  .nav-link-cyber:hover{color:var(--cyan) !important;text-shadow:0 0 10px var(--cyan);}
+  .nav-link-cyber.active{color:var(--yellow) !important;text-shadow:0 0 8px var(--yellow);}
+
+  .glitch{position:relative;font-family:'Orbitron',sans-serif;font-weight:900;color:var(--cyan);text-shadow:0 0 10px var(--cyan);animation:glitch-main 3s infinite;}
+  .glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%;}
+  .glitch::before{color:var(--magenta);animation:glitch-before 3s infinite;clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%);text-shadow:2px 0 var(--magenta);}
+  .glitch::after{color:var(--cyan);animation:glitch-after 3s infinite;clip-path:polygon(0 60%,100% 60%,100% 80%,0 80%);}
+  @keyframes glitch-main{0%,90%,100%{transform:none}92%{transform:skew(-0.5deg)}94%{transform:skew(0.5deg) translateX(2px)}96%{transform:none}98%{transform:skew(1deg) translateX(-2px)}}
+  @keyframes glitch-before{0%,85%,100%{transform:none;opacity:0}87%{transform:translate(-2px,0);opacity:0.8}89%{transform:translate(2px,0);opacity:0.8}91%{transform:none;opacity:0}}
+  @keyframes glitch-after{0%,85%,100%{transform:none;opacity:0}88%{transform:translate(2px,0);opacity:0.8}90%{transform:translate(-2px,0);opacity:0.8}92%{transform:none;opacity:0}}
+
+  section{padding:5rem 0;}
+  .section-label{font-family:'VT323',monospace;font-size:1rem;color:var(--magenta);letter-spacing:6px;}
+  .section-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(1.8rem,4vw,3rem);color:var(--cyan);text-shadow:0 0 20px rgba(0,255,231,0.4);margin-bottom:1rem;}
+  .section-line{width:60px;height:2px;background:linear-gradient(to right,var(--cyan),transparent);margin-bottom:2rem;box-shadow:0 0 10px var(--cyan);}
+
+  /* HERO */
+  .about-hero{padding:5rem 0;position:relative;overflow:hidden;}
+  .about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(0,255,231,0.06),transparent);}
+
+  /* MANIFESTO */
+  .manifesto{background:rgba(0,255,231,0.03);border-left:3px solid var(--cyan);box-shadow:inset 0 0 30px rgba(0,255,231,0.03);padding:2.5rem;margin:2rem 0;}
+  .manifesto p{color:rgba(0,255,231,0.7);font-size:1rem;line-height:2;font-family:'VT323',monospace;font-size:1.1rem;}
+  .manifesto p::before{content:'> ';color:var(--magenta);}
+
+  /* TEAM CARDS */
+  .team-card{background:rgba(10,21,32,0.9);border:1px solid rgba(0,255,231,0.2);padding:0;overflow:hidden;transition:all 0.3s;}
+  .team-card:hover{border-color:var(--cyan);transform:translateY(-5px);box-shadow:0 10px 40px rgba(0,255,231,0.1);}
+  .team-avatar{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:rgba(0,255,231,0.04);border-bottom:1px solid rgba(0,255,231,0.1);position:relative;overflow:hidden;}
+  .team-avatar::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,231,0.05),rgba(255,0,170,0.05));}
+  .team-avatar .av-glyph{position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--cyan),var(--magenta));box-shadow:0 0 10px var(--cyan);}
+  .team-body{padding:1.5rem;}
+  .team-name{font-family:'Orbitron',sans-serif;font-size:0.85rem;color:var(--cyan);margin-bottom:0.25rem;}
+  .team-role{font-size:0.7rem;letter-spacing:2px;color:var(--magenta);margin-bottom:0.75rem;text-transform:uppercase;}
+  .team-bio{font-size:0.75rem;color:rgba(0,255,231,0.5);line-height:1.6;}
+  .team-creds{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.75rem;}
+  .cred-tag{font-size:0.6rem;padding:0.2rem 0.5rem;border:1px solid rgba(0,255,231,0.2);color:rgba(0,255,231,0.4);letter-spacing:1px;}
+
+  /* TIMELINE */
+  .timeline{position:relative;padding-left:2rem;}
+  .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--cyan),var(--magenta));box-shadow:0 0 8px var(--cyan);}
+  .tl-item{position:relative;padding-bottom:2.5rem;}
+  .tl-dot{position:absolute;left:-2.35rem;top:0.2rem;width:14px;height:14px;border:2px solid var(--cyan);background:var(--dark);box-shadow:0 0 10px var(--cyan);}
+  .tl-year{font-family:'Orbitron',sans-serif;font-size:0.75rem;font-weight:700;color:var(--yellow);letter-spacing:2px;margin-bottom:0.3rem;text-shadow:0 0 8px var(--yellow);}
+  .tl-title{font-family:'Orbitron',sans-serif;font-size:0.85rem;color:var(--cyan);margin-bottom:0.3rem;}
+  .tl-desc{font-size:0.8rem;color:rgba(0,255,231,0.5);line-height:1.6;}
+
+  /* VALUES */
+  .value-item{border-bottom:1px solid rgba(0,255,231,0.1);padding:1.5rem 0;display:flex;gap:1.5rem;align-items:flex-start;}
+  .value-num{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:900;color:rgba(0,255,231,0.1);min-width:3rem;line-height:1;}
+  .value-title{font-family:'Orbitron',sans-serif;font-size:0.85rem;color:var(--cyan);margin-bottom:0.4rem;}
+  .value-desc{font-size:0.8rem;color:rgba(0,255,231,0.5);line-height:1.7;}
+
+  /* STATS */
+  .stat-box{border:1px solid rgba(0,255,231,0.2);padding:1.5rem;text-align:center;background:rgba(0,255,231,0.02);}
+  .stat-number{font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:900;color:var(--yellow);text-shadow:0 0 15px var(--yellow);display:block;}
+  .stat-label{font-size:0.7rem;letter-spacing:3px;color:rgba(0,255,231,0.5);text-transform:uppercase;margin-top:0.3rem;}
+
+  /* CTA */
+  .btn-cyber{font-family:'Orbitron',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:3px;padding:0.8rem 2rem;background:transparent;color:var(--cyan);border:1px solid var(--cyan);position:relative;overflow:hidden;text-decoration:none;display:inline-block;transition:all 0.3s;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);}
+  .btn-cyber::before{content:'';position:absolute;inset:0;background:var(--cyan);transform:translateX(-100%);transition:transform 0.3s;z-index:-1;}
+  .btn-cyber:hover{color:var(--dark);box-shadow:0 0 25px var(--cyan);}
+  .btn-cyber:hover::before{transform:translateX(0);}
+  .btn-cyber-m{color:var(--magenta);border-color:var(--magenta);}
+  .btn-cyber-m::before{background:var(--magenta);}
+  .btn-cyber-m:hover{box-shadow:0 0 25px var(--magenta);}
+
+  .footer-copy{border-top:1px solid rgba(0,255,231,0.1);margin-top:4rem;padding:1.5rem 0;color:rgba(0,255,231,0.3);font-size:0.75rem;text-align:center;}
+</style>
+</head>
+<body>
+<nav class="navbar-cyber">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <a href="index.html" class="navbar-brand-cyber">CYBER<span>LEARN</span></a>
+      <div class="d-flex gap-2 align-items-center flex-wrap">
+        <a href="index.html" class="nav-link-cyber">HOME</a>
+        <a href="courses.html" class="nav-link-cyber">COURSES</a>
+        <a href="about.html" class="nav-link-cyber active">ABOUT</a>
+        <a href="contact.html" class="nav-link-cyber">CONTACT</a>
+        <a href="register.html" class="nav-link-cyber"><span style="color:var(--magenta)">[</span>REGISTER<span style="color:var(--magenta)">]</span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="about-hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <p class="section-label">// SYSTEM PROFILE</p>
+        <h1 class="glitch section-title" data-text="ABOUT CYBERLEARN">ABOUT CYBERLEARN</h1>
+        <div class="section-line"></div>
+        <p style="color:rgba(0,255,231,0.6);font-size:0.95rem;line-height:1.9;max-width:550px;">
+          Founded in 2019 by a team of ex-NSA analysts and red team operators, CYBERLEARN was built on a single premise: <span style="color:var(--cyan)">the best way to defend is to learn to attack.</span>
+        </p>
+        <p style="color:rgba(0,255,231,0.5);font-size:0.85rem;line-height:1.8;max-width:550px;margin-top:1rem;">
+          We've trained government agents, Fortune 500 security teams, and self-taught hackers from 80+ countries. Our curriculum is updated with every major CVE and breach — because your enemy never stops learning.
+        </p>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block">
+        <div class="manifesto">
+          <p>WE DO NOT PROTECT IGNORANCE</p>
+          <p>WE ARM THE AWARE</p>
+          <p>KNOWLEDGE IS OFFENSIVE CAPABILITY</p>
+          <p>AND DEFENSIVE ARMOR</p>
+          <p style="color:var(--yellow);">// CYBERLEARN PROTOCOL 001</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:2rem 0;border-top:1px solid rgba(0,255,231,0.1);border-bottom:1px solid rgba(0,255,231,0.1);">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-6 col-md-3"><div class="stat-box"><span class="stat-number">2019</span><span class="stat-label">FOUNDED</span></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><span class="stat-number">12K+</span><span class="stat-label">GRADUATES</span></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><span class="stat-number">80+</span><span class="stat-label">COUNTRIES</span></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><span class="stat-number">48</span><span class="stat-label">LIVE COURSES</span></div></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <p class="section-label">// CORE DIRECTIVES</p>
+        <h2 class="section-title" style="font-size:2rem;">OUR VALUES</h2>
+        <div class="section-line"></div>
+        <div class="value-item">
+          <div class="value-num">01</div>
+          <div>
+            <div class="value-title">OFFENSE-FIRST THINKING</div>
+            <div class="value-desc">You can't defend what you don't understand. Every defensive module is built on offensive knowledge first.</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-num">02</div>
+          <div>
+            <div class="value-title">REAL WORLD, NOT TEXTBOOK</div>
+            <div class="value-desc">No slide decks. Every concept is tested in live lab environments with real tools, real CVEs, and real consequences.</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-num">03</div>
+          <div>
+            <div class="value-title">ETHICAL WARRIOR CODE</div>
+            <div class="value-desc">Skills without ethics are dangerous. Every student signs the Ethical Warrior Code before accessing course material.</div>
+          </div>
+        </div>
+        <div class="value-item" style="border:none;">
+          <div class="value-num">04</div>
+          <div>
+            <div class="value-title">PERPETUAL EVOLUTION</div>
+            <div class="value-desc">Threat landscapes change daily. Our content team pushes updates weekly so you're never fighting last year's threats.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <p class="section-label">// SYSTEM LOG</p>
+        <h2 class="section-title" style="font-size:2rem;">OUR HISTORY</h2>
+        <div class="section-line"></div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2019</div>
+            <div class="tl-title">ZERO-DAY LAUNCH</div>
+            <div class="tl-desc">Founded by 3 ex-NSA operatives. First 5 courses, 200 students in 30 days.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2020</div>
+            <div class="tl-title">LIVE LAB INFRASTRUCTURE</div>
+            <div class="tl-desc">Deployed proprietary cloud lab environment. Students can now hack real targets in isolated networks.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2021</div>
+            <div class="tl-title">GOVERNMENT CONTRACTS</div>
+            <div class="tl-desc">Partnered with 3 government agencies for custom security training programs. 2,000+ certified graduates.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2023</div>
+            <div class="tl-title">GLOBAL EXPANSION</div>
+            <div class="tl-desc">Localized content in 12 languages. CTF network launched with 5,000+ monthly competitors.</div>
+          </div>
+          <div class="tl-item" style="padding-bottom:0">
+            <div class="tl-dot" style="border-color:var(--magenta);box-shadow:0 0 10px var(--magenta);"></div>
+            <div class="tl-year" style="color:var(--magenta);text-shadow:0 0 8px var(--magenta);">NOW</div>
+            <div class="tl-title">NEXT PHASE INITIATED</div>
+            <div class="tl-desc">AI-powered adaptive learning. 12,000+ active students. 48 courses across all domains.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:2rem;">
+  <div class="container">
+    <p class="section-label">// COMMAND STRUCTURE</p>
+    <h2 class="section-title">THE OPERATORS</h2>
+    <div class="section-line"></div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="team-card">
+          <div class="team-avatar">🧠<div class="av-glyph"></div></div>
+          <div class="team-body">
+            <div class="team-name">Abdul Rafay</div>
+            <div class="team-role">FOUNDER & LEAD</div>
+            <div class="team-bio">BSIT student focused on AI security. Gold Medalist</div>
+            <div class="team-creds"><span class="cred-tag">OSCP</span><span class="cred-tag">OSCE3</span><span class="cred-tag">ex-NSA</span></div>
+          </div>
+        </div>
+      </div>
+      
+<section style="padding:4rem 0;">
+  <div class="container">
+    <div style="background:rgba(10,21,32,0.9);border:1px solid rgba(0,255,231,0.25);padding:4rem;text-align:center;position:relative;">
+      <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--cyan);box-shadow:0 0 15px var(--cyan);"></div>
+      <div style="position:absolute;bottom:0;right:0;width:3px;height:60%;background:var(--magenta);box-shadow:0 0 10px var(--magenta);"></div>
+      <p class="section-label">// READY TO DEPLOY?</p>
+      <h2 class="section-title">JOIN THE NETWORK</h2>
+      <p style="color:rgba(0,255,231,0.5);max-width:500px;margin:0 auto 2rem;font-size:0.9rem;">
+        Thousands of security professionals started here. Your next mission begins with a single enrollment.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="register.html" class="btn-cyber">CREATE ACCOUNT</a>
+        <a href="courses.html" class="btn-cyber btn-cyber-m">VIEW COURSES</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="footer-copy">// CYBERLEARN © 2085 — TRAINING THE NEXT GENERATION OF CYBER OPERATORS</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  setInterval(() => {
+    if (Math.random() < 0.07) {
+      document.body.style.filter = 'hue-rotate(8deg)';
+      setTimeout(() => document.body.style.filter = '', 70);
+    }
+  }, 3000);
+</script>
+</body>
+</html>
