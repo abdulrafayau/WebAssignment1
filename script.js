@@ -1,4 +1,3 @@
-// Dark Mode Toggle
 function toggleMode() {
     document.body.classList.toggle("dark-mode");
     localStorage.setItem("theme",
@@ -6,14 +5,12 @@ function toggleMode() {
     );
 }
 
-// Load saved theme
 window.onload = function () {
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
     }
 };
 
-// Scroll To Top
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 window.onscroll = function () {
