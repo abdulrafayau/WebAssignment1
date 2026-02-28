@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKILLSPARK // CONTACT</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root{--cyan:#00ffe7;--magenta:#ff00aa;--yellow:#ffe600;--dark:#050a0e;--green:#00ff41;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:linear-gradient(rgba(0,255,231,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,231,0.03) 1px,transparent 1px),var(--dark);background-size:40px 40px;color:var(--cyan);font-family:'Share Tech Mono',monospace;cursor:crosshair;}
+  body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 2px,rgba(0,0,0,0.12) 2px,rgba(0,0,0,0.12) 4px);pointer-events:none;z-index:9999;}
+  .navbar-cyber{background:rgba(5,10,14,0.95);border-bottom:1px solid var(--cyan);padding:1rem 0;position:sticky;top:0;z-index:1000;box-shadow:0 0 30px rgba(0,255,231,0.2);}
+  .navbar-brand-cyber{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.4rem;color:var(--cyan) !important;text-decoration:none;letter-spacing:3px;text-shadow:0 0 10px var(--cyan);}
+  .navbar-brand-cyber span{color:var(--magenta);}
+  .nav-link-cyber{font-family:'Share Tech Mono',monospace;color:rgba(0,255,231,0.7) !important;letter-spacing:2px;font-size:0.85rem;padding:0.5rem 1rem !important;text-decoration:none;transition:all 0.2s;}
+  .nav-link-cyber:hover{color:var(--cyan) !important;text-shadow:0 0 10px var(--cyan);}
+  .nav-link-cyber.active{color:var(--yellow) !important;text-shadow:0 0 8px var(--yellow);}
+
+  .glitch{position:relative;font-family:'Orbitron',sans-serif;font-weight:900;color:var(--cyan);text-shadow:0 0 10px var(--cyan);animation:glitch-main 3s infinite;}
+  .glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%;}
+  .glitch::before{color:var(--magenta);animation:glitch-before 3s infinite;clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%);text-shadow:2px 0 var(--magenta);}
+  .glitch::after{color:var(--cyan);animation:glitch-after 3s infinite;clip-path:polygon(0 60%,100% 60%,100% 80%,0 80%);}
+  @keyframes glitch-main{0%,90%,100%{transform:none}92%{transform:skew(-0.5deg)}94%{transform:skew(0.5deg) translateX(2px)}96%{transform:none}98%{transform:skew(1deg) translateX(-2px)}}
+  @keyframes glitch-before{0%,85%,100%{transform:none;opacity:0}87%{transform:translate(-2px,0);opacity:0.8}89%{transform:translate(2px,0);opacity:0.8}91%{transform:none;opacity:0}}
+  @keyframes glitch-after{0%,85%,100%{transform:none;opacity:0}88%{transform:translate(2px,0);opacity:0.8}90%{transform:translate(-2px,0);opacity:0.8}92%{transform:none;opacity:0}}
+
+  section{padding:5rem 0;}
+  .section-label{font-family:'VT323',monospace;font-size:1rem;color:var(--magenta);letter-spacing:6px;}
+  .section-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--cyan);text-shadow:0 0 20px rgba(0,255,231,0.4);margin-bottom:1rem;}
+  .section-line{width:60px;height:2px;background:linear-gradient(to right,var(--cyan),transparent);margin-bottom:2rem;box-shadow:0 0 10px var(--cyan);}
+
+  .panel{background:rgba(10,21,32,0.9);border:1px solid rgba(0,255,231,0.25);padding:2.5rem;position:relative;overflow:hidden;}
+  .panel::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--cyan);box-shadow:0 0 15px var(--cyan);}
+  .panel::after{content:'';position:absolute;top:-1px;left:0;width:40%;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan);}
+
+  .field-label{font-size:0.72rem;letter-spacing:3px;color:rgba(0,255,231,0.6);text-transform:uppercase;margin-bottom:0.4rem;display:block;}
+  .field-label span{color:var(--magenta);}
+  .cyber-input{width:100%;background:rgba(0,255,231,0.03);border:1px solid rgba(0,255,231,0.25);color:var(--cyan);font-family:'Share Tech Mono',monospace;font-size:0.9rem;padding:0.8rem 1rem;outline:none;transition:all 0.3s;}
+  .cyber-input:focus{border-color:var(--cyan);box-shadow:0 0 15px rgba(0,255,231,0.12);}
+  .cyber-input::placeholder{color:rgba(0,255,231,0.2);}
+
+  .btn-cyber{font-family:'Orbitron',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:3px;padding:0.9rem 2.5rem;background:transparent;color:var(--cyan);border:1px solid var(--cyan);position:relative;overflow:hidden;text-decoration:none;display:inline-block;transition:all 0.3s;cursor:pointer;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);width:100%;}
+  .btn-cyber::before{content:'';position:absolute;inset:0;background:var(--cyan);transform:translateX(-100%);transition:transform 0.3s;z-index:-1;}
+  .btn-cyber:hover{color:var(--dark);box-shadow:0 0 25px var(--cyan);}
+  .btn-cyber:hover::before{transform:translateX(0);}
+
+  .field-group{margin-bottom:1.2rem;}
+
+  /* Contact info cards */
+  .contact-info-item{border:1px solid rgba(0,255,231,0.15);padding:1.5rem;margin-bottom:1rem;background:rgba(0,255,231,0.02);position:relative;transition:all 0.3s;}
+  .contact-info-item:hover{border-color:rgba(0,255,231,0.4);box-shadow:0 0 20px rgba(0,255,231,0.08);}
+  .ci-icon{font-size:1.5rem;margin-bottom:0.5rem;display:block;filter:drop-shadow(0 0 8px var(--cyan));}
+  .ci-label{font-size:0.65rem;letter-spacing:4px;color:rgba(0,255,231,0.4);text-transform:uppercase;margin-bottom:0.3rem;}
+  .ci-value{font-size:0.9rem;color:var(--cyan);}
+
+  /* IRC / Discord style */
+  .comm-channels{margin-top:2rem;}
+  .channel{display:flex;align-items:center;gap:0.75rem;padding:0.75rem;border-bottom:1px solid rgba(0,255,231,0.08);cursor:pointer;transition:all 0.2s;}
+  .channel:hover{background:rgba(0,255,231,0.04);}
+  .ch-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:ping 2s ease infinite;}
+  @keyframes ping{0%,100%{box-shadow:0 0 4px var(--green)}50%{box-shadow:0 0 12px var(--green)}}
+  .ch-name{font-size:0.8rem;color:rgba(0,255,231,0.7);flex:1;}
+  .ch-status{font-size:0.65rem;letter-spacing:2px;color:var(--green);}
+
+  .subject-options{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
+  .subject-opt{font-size:0.7rem;letter-spacing:1px;padding:0.4rem 0.8rem;border:1px solid rgba(0,255,231,0.2);color:rgba(0,255,231,0.4);cursor:pointer;transition:all 0.2s;text-transform:uppercase;}
+  .subject-opt.active,.subject-opt:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,255,231,0.05);}
+
+  .footer-copy{border-top:1px solid rgba(0,255,231,0.1);margin-top:4rem;padding:1.5rem 0;color:rgba(0,255,231,0.3);font-size:0.75rem;text-align:center;}
+
+  .success-msg{display:none;padding:1.5rem;border:1px solid var(--green);background:rgba(0,255,65,0.05);text-align:center;font-family:'Orbitron',sans-serif;font-size:0.85rem;color:var(--green);text-shadow:0 0 10px var(--green);}
+  .success-msg.show{display:block;}
+</style>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar-cyber">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <a href="index.html" class="navbar-brand-cyber">SKILL<span>SPARK</span></a>
+      <div class="d-flex gap-2 align-items-center flex-wrap">
+        <a href="index.html" class="nav-link-cyber">HOME</a>
+        <a href="courses.html" class="nav-link-cyber">COURSES</a>
+        <a href="about.html" class="nav-link-cyber">ABOUT</a>
+        <a href="contact.html" class="nav-link-cyber active">CONTACT</a>
+        <a href="register.html" class="nav-link-cyber"><span style="color:var(--magenta)">[</span>REGISTER<span style="color:var(--magenta)">]</span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section>
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">// OPEN CHANNEL</p>
+      <h1 class="glitch section-title" data-text="GET IN TOUCH">GET IN TOUCH</h1>
+      <div class="section-line mx-auto"></div>
+    </div>
+
+    <div class="row g-4">
+      <!-- LEFT: Form -->
+      <div class="col-lg-7">
+        <div class="panel">
+          <div style="font-family:'VT323',monospace;font-size:1rem;color:var(--magenta);letter-spacing:3px;margin-bottom:1.5rem;">// TRANSMISSION INTERFACE</div>
+
+          <div class="field-group">
+            <label class="field-label">MESSAGE TYPE</label>
+            <div class="subject-options" id="subjectOpts">
+              <div class="subject-opt active" onclick="selectSubject(this)">GENERAL</div>
+              <div class="subject-opt" onclick="selectSubject(this)">COURSES</div>
+              <div class="subject-opt" onclick="selectSubject(this)">TECHNICAL</div>
+              <div class="subject-opt" onclick="selectSubject(this)">PARTNERSHIPS</div>
+              <div class="subject-opt" onclick="selectSubject(this)">CORPORATE</div>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6 field-group">
+              <label class="field-label">AGENT NAME <span>*</span></label>
+              <input type="text" class="cyber-input" placeholder="YOUR IDENTIFIER">
+            </div>
+            <div class="col-md-6 field-group">
+              <label class="field-label">RETURN ADDRESS <span>*</span></label>
+              <input type="email" class="cyber-input" placeholder="agent@domain.net">
+            </div>
+            <div class="col-12 field-group">
+              <label class="field-label">SUBJECT LINE <span>*</span></label>
+              <input type="text" class="cyber-input" placeholder="TRANSMISSION SUBJECT">
+            </div>
+            <div class="col-12 field-group">
+              <label class="field-label">MESSAGE PAYLOAD <span>*</span></label>
+              <textarea class="cyber-input" rows="6" placeholder="ENTER YOUR MESSAGE...&#10;&#10;// USE CLEAR, CONCISE LANGUAGE&#10;// INCLUDE RELEVANT SYSTEM DETAILS"></textarea>
+            </div>
+            <div class="col-12 field-group">
+              <label class="field-label">PRIORITY LEVEL</label>
+              <select class="cyber-input" style="appearance:none;">
+                <option>STANDARD (24-48h response)</option>
+                <option>ELEVATED (12h response)</option>
+                <option>CRITICAL (2h response)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn-cyber" onclick="sendMessage()">TRANSMIT MESSAGE →</button>
+          <div class="success-msg mt-3" id="successMsg">// TRANSMISSION RECEIVED — EXPECTED RESPONSE: 24H</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Info -->
+      <div class="col-lg-5">
+        <!-- Contact details -->
+        <div class="contact-info-item">
+          <span class="ci-icon">📡</span>
+          <div class="ci-label">SIGNAL ADDRESS</div>
+          <div class="ci-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="452a353605263c272037292024372b6b2b2031">[email&#160;protected]</a></div>
+        </div>
+        <div class="contact-info-item">
+          <span class="ci-icon">☎</span>
+          <div class="ci-label">SECURE LINE</div>
+          <div class="ci-value">+1 (555) CYB-LEAR</div>
+        </div>
+        <div class="contact-info-item">
+          <span class="ci-icon">📍</span>
+          <div class="ci-label">NODE LOCATION</div>
+          <div class="ci-value">77 Cipher St, San Francisco<br>CA 94102 // USA</div>
+        </div>
+        <div class="contact-info-item">
+          <span class="ci-icon">⏱</span>
+          <div class="ci-label">OPS HOURS</div>
+          <div class="ci-value">MON–FRI: 08:00–22:00 PST<br><span style="color:var(--green)">SUPPORT: 24/7</span></div>
+        </div>
+
+        <!-- Live channels -->
+        <div class="panel mt-3" style="padding:1.5rem;">
+          <div style="font-size:0.7rem;letter-spacing:3px;color:var(--magenta);margin-bottom:1rem;">// LIVE CHANNELS</div>
+          <div class="channel">
+            <div class="ch-dot"></div>
+            <span class="ch-name">Discord Server</span>
+            <span class="ch-status">3,241 ONLINE</span>
+          </div>
+          <div class="channel">
+            <div class="ch-dot"></div>
+            <span class="ch-name">Live Support Chat</span>
+            <span class="ch-status">OPEN</span>
+          </div>
+          <div class="channel">
+            <div class="ch-dot" style="background:var(--yellow);box-shadow:0 0 6px var(--yellow);animation:none;"></div>
+            <span class="ch-name">Student Forum</span>
+            <span class="ch-status" style="color:var(--yellow);">ACTIVE</span>
+          </div>
+          <div class="channel">
+            <div class="ch-dot"></div>
+            <span class="ch-name">GitHub Issues</span>
+            <span class="ch-status">OPEN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<div style="border-top:1px solid rgba(0,255,231,0.1);border-bottom:1px solid rgba(0,255,231,0.1);height:200px;background:rgba(0,255,231,0.02);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+  <div style="font-family:'VT323',monospace;font-size:1.2rem;color:rgba(0,255,231,0.3);letter-spacing:4px;z-index:1;">// NODE LOCATION: 37.7749° N, 122.4194° W // SAN FRANCISCO, CA</div>
+  <!-- Grid lines -->
+  <div style="position:absolute;inset:0;background:linear-gradient(rgba(0,255,231,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,231,0.05) 1px,transparent 1px);background-size:30px 30px;"></div>
+  <!-- Ping -->
+  <div style="position:absolute;width:20px;height:20px;border-radius:50%;background:var(--magenta);box-shadow:0 0 30px var(--magenta);animation:mapPing 2s ease infinite;"></div>
+  @keyframes mapPing {0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:0.5}}
+</div>
+<style>@keyframes mapPing{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(2);opacity:0.3}}</style>
+
+<div class="container"><div class="footer-copy">// SKILLSPARK © 2085 — ALL TRANSMISSIONS ENCRYPTED</div></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function selectSubject(el) {
+    document.querySelectorAll('.subject-opt').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function sendMessage() {
+    document.getElementById('successMsg').classList.add('show');
+    setTimeout(() => document.getElementById('successMsg').classList.remove('show'
