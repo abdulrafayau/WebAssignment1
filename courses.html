@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKILLSPARK // COURSES</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-cyber py-3 sticky-top">
+    <div class="container">
+      <a href="index.html" class="navbar-brand fw-bold fs-4">SKILL<span class="text-magenta">SPARK</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <div class="navbar-nav ms-auto gap-2">
+          <a href="index.html" class="nav-link">HOME</a>
+          <a href="courses.html" class="nav-link active text-yellow">COURSES</a>
+          <a href="about.html" class="nav-link">ABOUT</a>
+          <a href="contact.html" class="nav-link">CONTACT</a>
+          <a href="register.html" class="nav-link fw-bold text-magenta">[REGISTER]</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <div class="container">
+      <p class="text-magenta mb-1 fw-bold">// COURSE CATALOG</p>
+      <h1 class="display-5 fw-bold mb-3">EXPLORE THE CATALOG</h1>
+      <p class="lead text-muted max-w-75">
+        48 practical courses across secure development, mobile, and design. Every module built by working professionals.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-4">
+    <div class="container">
+      
+      <div class="d-flex flex-wrap gap-2 mb-5">
+        <button class="btn btn-outline-info filter-tab active" data-cat="all">ALL COURSES</button>
+        <button class="btn btn-outline-info filter-tab" data-cat="webdev">WEB DEV</button>
+        <button class="btn btn-outline-info filter-tab" data-cat="mobile">MOBILE</button>
+        <button class="btn btn-outline-info filter-tab" data-cat="security">SECURITY</button>
+      </div>
+
+      <div class="row g-4" id="courseGrid">
+
+        <div class="col-md-6 col-lg-4 course-item" data-cat="webdev">
+          <div class="card cyber-card h-100 bg-transparent">
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex justify-content-between mb-2">
+                <small class="text-warning fw-bold">// INTERMEDIATE</small>
+                <span class="badge border border-warning text-warning rounded-0">★ FEATURED</span>
+              </div>
+              <h5 class="fw-bold mb-3">SECURE WEB DEVELOPMENT</h5>
+              <p class="text-muted small mb-4">Build production-ready web apps with security baked in. OWASP best practices, secure authentication, HTTPS, and safe API design.</p>
+              
+              <div class="mt-auto">
+                <div class="d-flex gap-2 mb-4 flex-wrap">
+                  <span class="badge border border-secondary text-secondary rounded-0">Node.js</span>
+                  <span class="badge border border-secondary text-secondary rounded-0">HTTPS</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h3 class="text-yellow mb-0">$199</h3>
+                  <a href="register.html" class="btn btn-cyber btn-sm">ENROLL NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 course-item" data-cat="mobile">
+          <div class="card cyber-card h-100 bg-transparent">
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex justify-content-between mb-2">
+                <small class="text-warning fw-bold">// INTERMEDIATE</small>
+                <span class="badge border border-magenta text-magenta rounded-0">NEW</span>
+              </div>
+              <h5 class="fw-bold mb-3">SECURED FLUTTER DEVELOPMENT</h5>
+              <p class="text-muted small mb-4">Build cross-platform mobile apps with Flutter while applying secure coding principles — data encryption, and secure storage.</p>
+              
+              <div class="mt-auto">
+                <div class="d-flex gap-2 mb-4 flex-wrap">
+                  <span class="badge border border-secondary text-secondary rounded-0">Flutter</span>
+                  <span class="badge border border-secondary text-secondary rounded-0">Firebase</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h3 class="text-yellow mb-0">$229</h3>
+                  <a href="register.html" class="btn btn-cyber btn-sm">ENROLL NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 course-item" data-cat="security">
+          <div class="card cyber-card h-100 bg-transparent">
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex justify-content-between mb-2">
+                <small class="text-success fw-bold">// BEGINNER</small>
+              </div>
+              <h5 class="fw-bold mb-3">WEB SECURITY FUNDAMENTALS</h5>
+              <p class="text-muted small mb-4">Start your journey with web security basics — HTTP/S protocols, common vulnerabilities, CORS, and CSP headers.</p>
+              
+              <div class="mt-auto">
+                <div class="d-flex gap-2 mb-4 flex-wrap">
+                  <span class="badge border border-secondary text-secondary rounded-0">HTTP</span>
+                  <span class="badge border border-secondary text-secondary rounded-0">XSS</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h3 class="text-yellow mb-0">$99</h3>
+                  <a href="register.html" class="btn btn-cyber btn-sm">ENROLL NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 mt-5 border-top text-center" style="border-color: var(--border-hard) !important;">
+    <div class="container text-muted small">
+      // SKILLSPARK © 2026 &nbsp;|&nbsp; BY ABDUL RAFAY
+    </div>
+  </footer>
+
+  <button id="themeToggle" title="Toggle light / dark mode">🌙</button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filter logic kept exactly the same
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active', 'btn-info'));
+        tab.classList.add('active', 'btn-info');
+        const cat = tab.dataset.cat;
+        document.querySelectorAll('.course-item').forEach(item => {
+          item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+        });
+      });
+    });
+
+    // Theme logic
+    (function () {
+      const STORAGE_KEY = 'skillspark-theme';
+      const btn = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      const ICON = { dark: '🌙', light: '☀️' };
+
+      function applyTheme(theme) {
+        root.style.setProperty('--transition-override', 'none');
+        if (theme === 'light') { root.setAttribute('data-theme', 'light'); btn.textContent = ICON.light; } 
+        else { root.removeAttribute('data-theme'); btn.textContent = ICON.dark; }
+        requestAnimationFrame(() => requestAnimationFrame(() => { root.style.removeProperty('--transition-override'); }));
+      }
+
+      function toggle() {
+        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+        try { localStorage.setItem(STORAGE_KEY, next); } catch (_) {}
+      }
+
+      function init() {
+        let saved;
+        try { saved = localStorage.getItem(STORAGE_KEY); } catch (_) {}
+        if (saved === 'light' || saved === 'dark') applyTheme(saved);
+        else applyTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      }
+
+      btn.addEventListener('click', toggle);
+      init();
+    })();
+  </script>
+</body>
+</html>
