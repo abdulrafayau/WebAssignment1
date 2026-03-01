@@ -119,35 +119,23 @@
   <button id="themeToggle" title="Toggle light / dark mode">🌙</button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    (function () {
-      const STORAGE_KEY = 'skillspark-theme';
-      const btn = document.getElementById('themeToggle');
-      const root = document.documentElement;
-      const ICON = { dark: '🌙', light: '☀️' };
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    
+    const currentTheme = localStorage.getItem('theme') || 
+                        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-      function applyTheme(theme) {
-        root.style.setProperty('--transition-override', 'none');
-        if (theme === 'light') { root.setAttribute('data-theme', 'light'); btn.textContent = ICON.light; } 
-        else { root.removeAttribute('data-theme'); btn.textContent = ICON.dark; }
-        requestAnimationFrame(() => requestAnimationFrame(() => { root.style.removeProperty('--transition-override'); }));
-      }
+    const applyTheme = (theme) => {
+      theme === 'light' ? root.setAttribute('data-theme', 'light') : root.removeAttribute('data-theme');
+      btn.textContent = theme === 'light' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    };
 
-      function toggle() {
-        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        applyTheme(next);
-        try { localStorage.setItem(STORAGE_KEY, next); } catch (_) {}
-      }
+    applyTheme(currentTheme);
 
-      function init() {
-        let saved;
-        try { saved = localStorage.getItem(STORAGE_KEY); } catch (_) {}
-        if (saved === 'light' || saved === 'dark') applyTheme(saved);
-        else applyTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      }
-
-      btn.addEventListener('click', toggle);
-      init();
-    })();
+    btn.addEventListener('click', () => {
+      applyTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+    });
   </script>
 </body>
 </html>
